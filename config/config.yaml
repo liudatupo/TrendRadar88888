@@ -41,7 +41,7 @@ app:
 # ===============================================================
 schedule:
   enabled: true                         # 是否启用调度系统
-  preset: "morning_evening"             # 预设模板名称（见上方说明）
+  preset: "always_on"              # 预设模板名称（见上方说明）
 
 
 # ===============================================================
@@ -60,8 +60,6 @@ platforms:
   # === 综合新闻媒体类 ===
   - id: "thepaper"
     name: "澎湃新闻"
-  - id: "ifeng"
-    name: "凤凰网"
   - id: "cankaoxiaoxi"
     name: "参考消息"
   - id: "sputniknewscn"
@@ -77,7 +75,6 @@ platforms:
   - id: "wallstreetcn-quick"
     name: "华尔街见闻 快讯"
   - id: "wallstreetcn-news"
-    name: "华尔街见闻 最新"
   - id: "cls-hot"
     name: "财联社热门"
   - id: "jin10"
@@ -101,7 +98,7 @@ rss:
   # 文章新鲜度过滤配置（全局默认值）
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤
-    max_age_days: 2                   # 最大文章年龄（天）
+    max_age_days: 1                   # 最大文章年龄（天）
 
   # ============================================================
   # 全球主流财经媒体 RSS 源
@@ -395,8 +392,8 @@ display:
     ai_analysis: true
 
   standalone:
-    platforms: ["cls-telegraph", "wallstreetcn-hot"]
-    rss_feeds: ["CNBC"]
+    platforms: []
+    rss_feeds: []
     max_items: 20
 
 # ===============================================================
