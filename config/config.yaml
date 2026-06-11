@@ -87,22 +87,8 @@ platforms:
   - id: "tencent-hot"
     name: "腾讯新闻 综合早报"
     
-  - id: "cls-telegraph"
-    name: "财联社 电报"
+
     
-  - id: "cls-depth"
-    name: "财联社 深度"
-    
-
-
-  # ======================================================
-  # 暂时失败的渠道（可能需要修复或接口已变更）
-  # 备注：以下渠道在测试中抓取失败，已暂时注释
-  # 如需使用请检查API接口状态或联系维护团队
-  # ======================================================
-  
-
-
 
 
 # ===============================================================
@@ -525,7 +511,7 @@ storage:
   # 用于 MCP Server 等场景：爬虫存到远程，MCP 拉取到本地分析
   pull:
     enabled: true                  # 是否启用启动时自动拉取
-    days: 7                           # 拉取最近 N 天的数据
+    days: 3                           # 拉取最近 N 天的数据
 
 
 # ===============================================================
@@ -545,7 +531,7 @@ ai:
   # 完整列表: https://docs.litellm.ai/docs/providers
   # 如果你对于看英文文档比较头疼，那么可以点击页面右下角的 【Ask AI】 ,用中文询问怎么配置 
   
-  model: "deepseek/deepseek--chat"
+  model: "deepseek/deepseek-chat"
 
   api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
   
@@ -639,7 +625,7 @@ ai_analysis:
 
   include_rss: true                # 是否包含 RSS 内容进行分析
   
-  include_standalone: true          # 是否将独立展示区数据纳入 AI 分析
+  include_standalone: true         # 是否将独立展示区数据纳入 AI 分析
                                     # 数据源列表来自 display.standalone.platforms / display.standalone.rss_feeds
 
   include_rank_timeline: true       # 是否传递完整排名时间线
