@@ -84,34 +84,6 @@ platforms:
     name: "金十数据"
 
 
-
-
-  # === 科技类平台 ===
-  - id: "ithome"
-    name: "IT之家"
-  - id: "juejin"
-    name: "掘金"
-  - id: "github"
-    name: "GitHub"
-  - id: "hackernews"
-    name: "Hacker News"
-  - id: "solidot"
-    name: "Solidot"
-  - id: "v2ex"
-    name: "V2EX"
-  - id: "nowcoder"
-    name: "牛客网"
-  - id: "pcbeta"
-    name: "远景论坛"
-  - id: "sspai"
-    name: "少数派"
-  - id: "producthunt"
-    name: "ProductHunt"
-
-  # === 其他/工具类 ===
-  - id: "chongbuluo"
-    name: "虫部落"
-
   - id: "tencent-hot"
     name: "腾讯新闻 综合早报"
     
@@ -143,7 +115,7 @@ rss:
   # 文章新鲜度过滤配置（全局默认值）
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤
-    max_age_days: 5                   # 最大文章年龄（天）
+    max_age_days: 2                   # 最大文章年龄（天）
 
   # ============================================================
   # 全球主流财经媒体 RSS 源
@@ -274,14 +246,6 @@ rss:
 
 
 
-    - id: "stockstar"
-      name: "证券之星"
-      url: "http://news.stockstar.com/rss/xml.aspx?file=xml/stock/2.xml"
-
-    - id: "eastmoney"
-      name: "东方财富"
-      url: "http://news.eastmoney.com/rss/"
-
     - id: "stcn"
       name: "证券时报"
       url: "http://www.stcn.com/rss/news.xml"
@@ -299,7 +263,7 @@ rss:
     - id: "federal-reserve"
       name: "Federal Reserve"
       url: "https://www.federalreserve.gov/feeds/"
-      max_age_days: 7
+      max_age_days: 3
 
     - id: "ecb"
       name: "European Central Bank"
@@ -344,7 +308,7 @@ rss:
 report:
   mode: "current"                     # daily | current | incremental（schedule 开启时作为默认值）
 
-  display_mode: " keyword"             # 分组维度: keyword | platform
+  display_mode: "platform"             # 分组维度: keyword | platform
                                       # keyword: 按关键词分组显示（默认）
                                       # platform: 按平台/来源分组显示
 
@@ -355,7 +319,7 @@ report:
 
   rank_threshold: 5                   # 排名高亮阈值（影响展示强调，不改变抓取范围）
 
-  max_news_per_keyword: 20             # 每个关键词/标签最大显示数量（0=不限制，仅影响展示裁剪）
+  max_news_per_keyword: 5             # 每个关键词/标签最大显示数量（0=不限制，仅影响展示裁剪）
 
 
 # ===============================================================
@@ -398,7 +362,7 @@ ai_filter:
   batch_interval: 2                       # 分批处理时，每批之间的等待时间（秒）
                                           # 避免频繁调用 API 触发限流，设为 0 则不等待
 
-  min_score: 0.6                          # 推送最低分数阈值（0.0 ~ 1.0）
+  min_score: 0.7                          # 推送最低分数阈值（0.0 ~ 1.0）
                                           # 0 = 不过滤；值越高越严格（推荐先用 0.5~0.7）
 
   # 兴趣描述文件
@@ -581,7 +545,7 @@ ai:
   # 完整列表: https://docs.litellm.ai/docs/providers
   # 如果你对于看英文文档比较头疼，那么可以点击页面右下角的 【Ask AI】 ,用中文询问怎么配置 
   
-  model: "deepseek/deepseek-reanable"
+  model: "deepseek/deepseek--chat"
 
   api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
   
@@ -710,7 +674,7 @@ ai_translation:
   # standalone: 独立展示区（热榜平台 + RSS 源）
   # 如果 display.regions 关闭了显示，那么这边即使开启了也不会翻译
   scope:
-    hotlist: false                  # 热榜区域
+    hotlist: true                 # 热榜区域
     rss: true                      # RSS 区域
     standalone: true               # 独立展示区
 
