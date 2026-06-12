@@ -289,20 +289,20 @@ rss:
 # - incremental：最少打扰，只看新增
 # ===============================================================
 report:
-  mode: "daily"                     # daily | current | incremental（schedule 开启时作为默认值）
+  mode: "current"                     # daily | current | incremental（schedule 开启时作为默认值）
 
-  display_mode: "platform"             # 分组维度: keyword | platform
+  display_mode: "keyword"             # 分组维度: keyword | platform
                                       # keyword: 按关键词分组显示（默认）
                                       # platform: 按平台/来源分组显示
 
   # 关键词模式分组排序方式（仅 keyword 模式生效）
   # true: 按 frequency_words.txt 的定义顺序排列
   # false: 按匹配到的热点条数排序（条数多的在前）
-  sort_by_position_first: TRUE
+  sort_by_position_first: false
 
-  rank_threshold: 5                   # 排名高亮阈值（影响展示强调，不改变抓取范围）
+  rank_threshold: 10                   # 排名高亮阈值（影响展示强调，不改变抓取范围）
 
-  max_news_per_keyword: 5             # 每个关键词/标签最大显示数量（0=不限制，仅影响展示裁剪）
+  max_news_per_keyword: 10             # 每个关键词/标签最大显示数量（0=不限制，仅影响展示裁剪）
 
 
 # ===============================================================
@@ -321,7 +321,7 @@ filter:
   # AI 模式标签排序开关（仅 ai 模式生效）
   # true: 按标签优先级排序（来自兴趣描述提取顺序）
   # false: 按匹配条数排序（条数多的在前）
-  priority_sort_enabled: true
+  priority_sort_enabled: false
 
 
 # ===============================================================
@@ -357,7 +357,7 @@ ai_filter:
   # 全量重分类触发阈值（0~1）
   # change_ratio >= 此值：全量重分类；否则增量更新
   # 0.0 最准确最费；1.0 最省但可能陈旧；0.6 是平衡点
-  reclassify_threshold: 0.6
+  reclassify_threshold: 0.7
 
   # 以下提示词模板一般无需修改（不建议动）
 
