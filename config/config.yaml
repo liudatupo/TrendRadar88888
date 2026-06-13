@@ -298,9 +298,9 @@ report:
   # false: 按匹配到的热点条数排序（条数多的在前）
   sort_by_position_first: false
 
-  rank_threshold: 10                   # 排名高亮阈值（影响展示强调，不改变抓取范围）
+  rank_threshold: 5                   # 排名高亮阈值（影响展示强调，不改变抓取范围）
 
-  max_news_per_keyword: 10             # 每个关键词/标签最大显示数量（0=不限制，仅影响展示裁剪）
+  max_news_per_keyword: 20             # 每个关键词/标签最大显示数量（0=不限制，仅影响展示裁剪）
 
 
 # ===============================================================
@@ -314,7 +314,7 @@ report:
 # 5) 这里决定“筛选路径”，不决定 AI 模型（模型在 ai 段）
 # ===============================================================
 filter:
-  method: "keyword"                     # 可选: keyword | ai
+  method: "ai"                     # 可选: keyword | ai
 
   # AI 模式标签排序开关（仅 ai 模式生效）
   # true: 按标签优先级排序（来自兴趣描述提取顺序）
@@ -381,7 +381,7 @@ display:
     - hotlist
     - rss
     - standalone
-    - ai_analysis
+    -
 
   regions:
     hotlist: true
@@ -604,7 +604,7 @@ ai_analysis:
   #   - 推送 incremental（避免重复），AI 分析 current（看当前榜单变化）
   #   - 推送 current（实时热点），AI 分析 daily（全天总结）
   #
-  mode: "current"
+  mode: "daily"
 
   # 分析内容配置
   max_news_for_analysis: 5000        # 热榜+RSS 合计参与分析的新闻数量上限（控制成本关键项）
